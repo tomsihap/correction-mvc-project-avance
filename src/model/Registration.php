@@ -112,4 +112,14 @@ class Registration extends Db {
 
         return $registration;
     }
+
+    public function getStudent() {
+        $student = Student::findOne($this->getStudentId());
+        return $student;
+    }
+
+    public function getCourse() {
+        $course = Course::findOne($this->getCourseId());
+        return $course;
+    }
 }

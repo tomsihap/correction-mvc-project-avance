@@ -19,8 +19,8 @@
         <?php foreach($registrations as $registration) : ?>
             <tr>
                 <td><?= $registration->getId(); ?></td>
-                <td><?= $registration->getStudentId(); ?></td>
-                <td><?= $registration->getCourseId(); ?></td>
+                <td><?= $registration->getStudent()->getName(); ?></td>
+                <td><?= $registration->getCourse()->getTitle(); ?></td>
                 <td><a href="<?= url('registrations/' . $registration->getId() . '/edit') ?>" class="btn btn-warning btn-sm">Éditer</a></td>
                 <td><a href="<?= url('registrations/' . $registration->getId() . '/delete') ?>" class="btn btn-danger btn-sm" onclick="return confirm('Voulez-vous supprimer cet élément ?)">Supprimer</a></td>
             </tr>
