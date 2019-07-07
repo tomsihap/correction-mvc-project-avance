@@ -16,13 +16,16 @@
     </thead>
 
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Han Solo</td>
-            <td>Thermodynamique spatiale</td>
-            <td><a href="#" class="btn btn-warning btn-sm">Éditer</a></td>
-            <td><a href="#" class="btn btn-danger btn-sm">Supprimer</a></td>
-        </tr>
+        <?php foreach($registrations as $registration) : ?>
+            <tr>
+                <td><?= $registration->getId(); ?></td>
+                <td><?= $registration->getStudentId(); ?></td>
+                <td><?= $registration->getCourseId(); ?></td>
+                <td>1</td>
+                <td><a href="<?= url('registrations/' . $registration->getId() . '/edit') ?>" class="btn btn-warning btn-sm">Éditer</a></td>
+                <td><a href="<?= url('registrations/' . $registration->getId() . '/delete') ?>" class="btn btn-danger btn-sm">Supprimer</a></td>
+            </tr>
+        <?php endforeach; ?>
     </tbody>
 </table>
 

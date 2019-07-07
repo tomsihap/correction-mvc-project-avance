@@ -17,14 +17,16 @@
     </thead>
 
     <tbody>
-        <tr>
-            <td>1</td>
-            <td>Thermodynamique spatiale</td>
-            <td>Lando Calrissian</td>
-            <td>1</td>
-            <td><a href="#" class="btn btn-warning btn-sm">Éditer</a></td>
-            <td><a href="#" class="btn btn-danger btn-sm">Supprimer</a></td>
-        </tr>
+        <?php foreach($courses as $course) : ?>
+            <tr>
+                <td><?= $course->getId(); ?></td>
+                <td><?= $course->getTitle(); ?></td>
+                <td><?= $course->getTeacher(); ?></td>
+                <td>1</td>
+                <td><a href="<?= url('courses/' . $course->getId() . '/edit') ?>" class="btn btn-warning btn-sm">Éditer</a></td>
+                <td><a href="<?= url('courses/' . $course->getId() . '/delete') ?>" class="btn btn-danger btn-sm">Supprimer</a></td>
+            </tr>
+        <?php endforeach; ?>
     </tbody>
 </table>
 
