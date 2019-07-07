@@ -74,7 +74,7 @@ class Registration extends Db {
 
     public function delete() {
         $data = [
-            'id' => $this->id(),
+            'id' => $this->getId(),
         ];
 
         Db::dbDelete(self::TABLE_NAME, $data);
