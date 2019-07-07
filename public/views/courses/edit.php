@@ -3,7 +3,7 @@
 <!-- Contenu de la vue -->
 <a href="<?= url('courses/' . $course->getId() ) ?>">< Retour au cours</a>
 
-<form action="<?= url('courses/edit') ?>" method="post">
+<form action="<?= url('courses/' . $course->getId() . '/edit') ?>" method="post">
 
     <div class="form-group">
         <label for="courseNameForm">Nom du cours</label>

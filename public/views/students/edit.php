@@ -3,7 +3,7 @@
 <!-- Contenu de la vue -->
 <a href="<?= url('students/' .  $student->getId() ) ?>">< Retour à l'étudiant</a>
 
-<form action="<?= url('students/add') ?>" method="post">
+<form action="<?= url('students/' . $student->getId() . '/edit') ?>" method="post">
 
     <div class="form-group">
         <label for="studentNameForm">Prénom et nom de l'étudiant</label>

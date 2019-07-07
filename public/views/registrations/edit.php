@@ -3,7 +3,7 @@
 <!-- Contenu de la vue -->
 <a href="<?= url('registrations') ?>">< Retour à l'inscription</a>
 
-<form action="<?= url('registrations/add') ?>" method="post">
+<form action="<?= url('registrations/' . $registration->getId() . '/edit') ?>" method="post">
 
     <div class="form-group">
         <label for="studentForm">Choix de l'étudiant</label>
