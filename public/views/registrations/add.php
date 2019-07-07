@@ -9,6 +9,9 @@
         <label for="studentForm">Choix de l'étudiant</label>
         <select name="student_id" id="studentForm" class="form-control">
             <option selected disabled>Choisir un étudiant...</option>
+            <?php foreach($students as $student): ?>
+            <option value="<?= $student->getId()?>"><?= $student->getName(); ?> (<?= $student->getEmail(); ?>)</option>
+            <?php endforeach; ?>
         </select>
     </div>
 
@@ -16,6 +19,9 @@
         <label for="courseForm">Choix du cours</label>
         <select name="course_id" id="courseForm" class="form-control">
             <option selected disabled>Choisir un cours...</option>
+            <?php foreach($courses as $course): ?>
+            <option value="<?= $course->getId()?>"><?= $course->getTitle(); ?> (<?= $course->getTeacher(); ?>)</option>
+            <?php endforeach; ?>
         </select>
     </div>
 

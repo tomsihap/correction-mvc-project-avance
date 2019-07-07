@@ -10,7 +10,10 @@ class RegistrationsController {
 
     // Route: GET registrations/add
     public function add() {
-        view ('registrations.add');
+
+        $students = Student::findAll();
+        $courses = Course::findAll();
+        view ('registrations.add', compact('students', 'courses'));
     }
 
     // Route: POST registrations/add
