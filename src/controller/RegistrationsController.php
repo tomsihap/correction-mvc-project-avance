@@ -26,8 +26,10 @@ class RegistrationsController {
 
     // Route: GET registrations/$id/edit
     public function edit($id) {
+        $students = Student::findAll();
+        $courses = Course::findAll();
         $registration = Registration::findOne($id);
-        view ('registrations.edit', compact('registration'));
+        view ('registrations.edit', compact('registration', 'students', 'courses'));
     }
 
     // Route: POST registrations/$id/edit
