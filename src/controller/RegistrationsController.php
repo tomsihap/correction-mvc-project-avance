@@ -3,7 +3,9 @@
 class RegistrationsController {
     // Route: GET registrations
     public function list() {
-        view ('registrations.list');
+
+        $registrations = Registration::findAll();
+        view ('registrations.list', compact('registrations'));
     }
 
     // Route: GET registrations/add

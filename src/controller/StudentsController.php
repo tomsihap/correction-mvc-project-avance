@@ -3,7 +3,9 @@
 class StudentsController {
     // Route: GET students
     public function list() {
-        view('students.list');
+
+        $students = Student::findAll();
+        view('students.list', compact('students'));
     }
 
     // Route: GET students/add

@@ -3,7 +3,9 @@
 class CoursesController {
     // Route: GET courses
     public function list() {
-        view ('courses.list');
+
+        $courses = Course::findAll();
+        view ('courses.list', compact('courses'));
     }
 
     // Route: GET courses/add
