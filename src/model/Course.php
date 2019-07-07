@@ -72,4 +72,21 @@ class Course extends Db {
 
         return $courses;
     }
+
+    public static function findOne(int $id) {
+        $request = [
+            ['id', '=', $id]
+        ];
+        $element = Db::dbFind(self::TABLE_NAME, $request);
+        if (count($element) > 0) $element = $element[0];
+        else return;
+
+        $course = new Course;
+        $course->setId($element['id']);
+        $course->setTitle($element['title']);
+        $course->setTeacher($element['teacher']);
+
+        return $course;
+
+    }
 }

@@ -70,4 +70,20 @@ class Student extends Db {
 
         return $students;
     }
+
+    public static function findOne(int $id) {
+        $request = [
+            ['id', '=', $id]
+        ];
+        $element = Db::dbFind(self::TABLE_NAME, $request);
+        if (count($element) > 0) $element = $element[0];
+        else return;
+
+        $student = new Student;
+        $student->setId($element['id']);
+        $student->setName($element['name']);
+        $student->setEmail($element['email']);
+
+        return $student;
+    }
 }

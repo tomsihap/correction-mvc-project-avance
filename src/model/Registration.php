@@ -74,4 +74,20 @@ class Registration extends Db {
 
         return $registrations;
     }
+
+    public static function findOne(int $id) {
+        $request = [
+            ['id', '=', $id]
+        ];
+        $element = Db::dbFind(self::TABLE_NAME, $request);
+        if (count($element) > 0) $element = $element[0];
+        else return;
+
+        $registration = new Registration;
+        $registration->setId($element['id']);
+        $registration->setStudentId($element['student_id']);
+        $registration->setCourseId($element['course_id']);
+
+        return $registration;
+    }
 }
