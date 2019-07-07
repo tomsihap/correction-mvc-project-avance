@@ -53,6 +53,18 @@ class Registration extends Db {
 
     public static function findAll() {
         $data = Db::dbFind(self::TABLE_NAME);
-        return $data;
+
+        $registrations = [];
+        foreach($data as $d) {
+            $registration = new Registration;
+            $registration->setId($d['id']);
+            $registration->setStudentId($d['student_id']);
+            $registration->setCourseId($d['course_id']);
+            $registration->save();
+
+            $registrations[] = $registration;
+        }
+
+        return $registrations;
     }
 }

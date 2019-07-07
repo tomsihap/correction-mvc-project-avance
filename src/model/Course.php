@@ -49,6 +49,18 @@ class Course extends Db {
 
     public static function findAll() {
         $data = Db::dbFind(self::TABLE_NAME);
-        return $data;
+
+        $courses = [];
+        foreach($data as $d) {
+            $course = new Course;
+            $course->setId($d['id']);
+            $course->setTitle($d['title']);
+            $course->setTeacher($d['teacher']);
+            $course->save();
+
+            $courses[] = $course;
+        }
+
+        return $courses;
     }
 }

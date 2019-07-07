@@ -49,6 +49,18 @@ class Student extends Db {
 
     public static function findAll() {
         $data = Db::dbFind(self::TABLE_NAME);
-        return $data;
+
+        $students = [];
+        foreach ($data as $d) {
+            $student = new Student;
+            $student->setId($d['id']);
+            $student->setName($d['name']);
+            $student->setEmail($d['email']);
+            $student->save();
+
+            $students[] = $student;
+        }
+
+        return $students;
     }
 }
