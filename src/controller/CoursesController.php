@@ -15,7 +15,10 @@ class CoursesController {
 
     // Route: POST courses/add
     public function save() {
-
+        $course = new Course;
+        $course->setTitle($_POST['title']);
+        $course->setTeacher($_POST['teacher']);
+        $course->save();
     }
 
     // Route: GET courses/$id/edit

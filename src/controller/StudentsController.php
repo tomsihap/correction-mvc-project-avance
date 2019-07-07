@@ -15,7 +15,10 @@ class StudentsController {
 
     // Route: POST students/add
     public function save() {
-
+        $student = new Student;
+        $student->setName($_POST['name']);
+        $student->setEmail($_POST['email']);
+        $student->save();
     }
 
     // Route: GET students/$id/edit

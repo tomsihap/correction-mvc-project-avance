@@ -15,7 +15,10 @@ class RegistrationsController {
 
     // Route: POST registrations/add
     public function save() {
-
+        $registration = new Registration;
+        $registration->setStudentId($_POST['student_id']);
+        $registration->setCourseId($_POST['course_id']);
+        $registration->save();
     }
 
     // Route: GET registrations/$id/edit
