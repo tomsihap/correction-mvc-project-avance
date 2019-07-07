@@ -19,6 +19,8 @@ class CoursesController {
         $course->setTitle($_POST['title']);
         $course->setTeacher($_POST['teacher']);
         $course->save();
+
+        redirectTo('courses');
     }
 
     // Route: GET courses/$id/edit
@@ -33,12 +35,16 @@ class CoursesController {
         $course->setTitle($_POST['title']);
         $course->setTeacher($_POST['teacher']);
         $course->update();
+
+        redirectTo('courses');
     }
 
     // Route: GET courses/$id/delete
     public function delete($id) {
         $course = Course::findOne($id);
         $course->delete();
+
+        redirectTo('courses');
 
     }
 

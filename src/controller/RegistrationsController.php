@@ -22,6 +22,8 @@ class RegistrationsController {
         $registration->setStudentId($_POST['student_id']);
         $registration->setCourseId($_POST['course_id']);
         $registration->save();
+
+        redirectTo('registrations');
     }
 
     // Route: GET registrations/$id/edit
@@ -38,12 +40,16 @@ class RegistrationsController {
         $registration->setStudentId($_POST['student_id']);
         $registration->setCourseId($_POST['course_id']);
         $registration->update();
+
+        redirectTo('registrations');
     }
 
     // Route: GET registrations/$id/delete
     public function delete($id) {
         $student = Registration::findOne($id);
         $student->delete();
+
+        redirectTo('registrations');
     }
 
     // Route: GET registrations/$id
