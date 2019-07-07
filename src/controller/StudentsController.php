@@ -37,7 +37,8 @@ class StudentsController {
 
     // Route: GET students/$id/delete
     public function delete($id) {
-
+        $student = Student::findOne($id);
+        $student->delete();
     }
 
     // Route: GET students/$id

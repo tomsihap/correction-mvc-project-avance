@@ -42,6 +42,8 @@ class RegistrationsController {
 
     // Route: GET registrations/$id/delete
     public function delete($id) {
+        $student = Registration::findOne($id);
+        $student->delete();
     }
 
     // Route: GET registrations/$id

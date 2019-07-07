@@ -37,6 +37,8 @@ class CoursesController {
 
     // Route: GET courses/$id/delete
     public function delete($id) {
+        $course = Course::findOne($id);
+        $course->delete();
 
     }
 
