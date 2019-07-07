@@ -14,13 +14,13 @@ $router->get('students/{id}/delete', 'StudentsController@delete');   // Suppress
 $router->get('students/{id}',       'StudentsController@show');     // Affichage d'un student
 
 /** Model: Course */
-$router->get('courses',            'CoursessController@index');    // Liste des cours
-$router->get('courses/add',        'CoursessController@add');      // Ajout (affichage formulaire)
-$router->post('courses/add',       'CoursessController@save');      // Ajout (traitement formulaire)
-$router->get('courses/{id}/edit',  'CoursessController@edit');     // Édition (affichage formulaire)
-$router->post('courses/{id}/edit', 'CoursessController@update');   // Édition (traitement formulaire)
-$router->get('courses/{id}/delete', 'CoursessController@delete');   // Suppression
-$router->get('courses/{id}',       'CoursessController@show');     // Affichage d'un cours
+$router->get('courses',            'CoursesController@index');    // Liste des cours
+$router->get('courses/add',        'CoursesController@add');      // Ajout (affichage formulaire)
+$router->post('courses/add',       'CoursesController@save');      // Ajout (traitement formulaire)
+$router->get('courses/{id}/edit',  'CoursesController@edit');     // Édition (affichage formulaire)
+$router->post('courses/{id}/edit', 'CoursesController@update');   // Édition (traitement formulaire)
+$router->get('courses/{id}/delete', 'CoursesController@delete');   // Suppression
+$router->get('courses/{id}',       'CoursesController@show');     // Affichage d'un cours
 
 /** Model: Registration */
 $router->get('registrations',            'RegistrationsController@index');    // Liste des inscriptions
