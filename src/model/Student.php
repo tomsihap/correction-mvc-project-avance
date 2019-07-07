@@ -56,7 +56,6 @@ class Student extends Db {
             $student->setId($d['id']);
             $student->setName($d['name']);
             $student->setEmail($d['email']);
-            $student->save();
 
             $students[] = $student;
         }

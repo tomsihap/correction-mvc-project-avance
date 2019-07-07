@@ -60,7 +60,6 @@ class Registration extends Db {
             $registration->setId($d['id']);
             $registration->setStudentId($d['student_id']);
             $registration->setCourseId($d['course_id']);
-            $registration->save();
 
             $registrations[] = $registration;
         }

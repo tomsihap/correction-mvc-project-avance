@@ -56,7 +56,6 @@ class Course extends Db {
             $course->setId($d['id']);
             $course->setTitle($d['title']);
             $course->setTeacher($d['teacher']);
-            $course->save();
 
             $courses[] = $course;
         }
