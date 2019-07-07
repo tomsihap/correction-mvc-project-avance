@@ -23,7 +23,8 @@ class StudentsController {
 
     // Route: GET students/$id/edit
     public function edit($id) {
-        view('students.edit');
+        $student = Student::findOne($id);
+        view('students.edit', compact('student'));
     }
 
     // Route: POST students/$id/edit
