@@ -15,11 +15,19 @@ class Registration extends Db {
     }
 
     public function setStudentId($student_id) {
+        if (strlen($student_id) < 1) {
+            throw new Exception ('Le champ est vide.');
+        }
+
         $this->student_id = $student_id;
         return $this;
     }
 
     public function setCourseId($course_id) {
+        if (strlen($course_id) < 1) {
+            throw new Exception ('Le champ est vide.');
+        }
+
         $this->course_id = $course_id;
         return $this;
     }

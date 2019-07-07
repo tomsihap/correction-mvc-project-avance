@@ -14,11 +14,19 @@ class Student extends Db {
     }
 
     public function setName($name) {
+        if (strlen($name) < 1) {
+            throw new Exception ('Le champ est vide.');
+        }
+
         $this->name = $name;
         return $this;
     }
 
     public function setEmail($email) {
+        if (strlen($email) < 1) {
+            throw new Exception ('Le champ est vide.');
+        }
+
         $this->email = $email;
         return $this;
     }

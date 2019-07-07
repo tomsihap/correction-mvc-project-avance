@@ -14,11 +14,21 @@ class Course extends Db {
     }
 
     public function setTitle($title) {
+
+        if (strlen($title) < 1) {
+            throw new Exception ('Le champ est vide.');
+        }
+
         $this->title = $title;
         return $this;
     }
 
-    public function setTeacher($teacher) {
+    public function setTeacher($teacher)
+    {
+        if (strlen($teacher) < 1) {
+            throw new Exception('Le champ est vide.');
+        }
+
         $this->teacher = $teacher;
         return $this;
     }
