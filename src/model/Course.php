@@ -57,6 +57,19 @@ class Course extends Db {
         return $this;
     }
 
+    public function update() {
+        if ($this->id > 0) {
+            $data = [
+                "id"        => $this->getId(),
+                "title"     => $this->getTitle(),
+                "teacher"   => $this->getTeacher()
+            ];
+            Db::dbUpdate(self::TABLE_NAME, $data);
+            return $this;
+        }
+        return;
+    }
+
     public static function findAll() {
         $data = Db::dbFind(self::TABLE_NAME);
 

@@ -59,6 +59,19 @@ class Registration extends Db {
         return $this;
     }
 
+    public function update() {
+        if ($this->id > 0) {
+            $data = [
+                "id"            => $this->getId(),
+                "student_id"    => $this->getStudentId(),
+                "course_id"     => $this->getCourseId()
+            ];
+            Db::dbUpdate(self::TABLE_NAME, $data);
+            return $this;
+        }
+        return;
+    }
+
     public static function findAll() {
         $data = Db::dbFind(self::TABLE_NAME);
 
