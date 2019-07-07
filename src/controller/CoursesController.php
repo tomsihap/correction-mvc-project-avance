@@ -2,13 +2,13 @@
 
 class CoursesController {
     // Route: GET courses
-    public function index() {
-
+    public function list() {
+        view ('courses.list');
     }
 
     // Route: GET courses/add
     public function add() {
-
+        view ('courses.add');
     }
 
     // Route: POST courses/add
@@ -18,7 +18,7 @@ class CoursesController {
 
     // Route: GET courses/$id/edit
     public function edit($id) {
-
+        view ('courses.edit');
     }
 
     // Route: POST courses/$id/edit
@@ -33,6 +33,6 @@ class CoursesController {
 
     // Route: GET courses/$id
     public function show($id) {
-
+        view ('courses.show');
     }
 }
