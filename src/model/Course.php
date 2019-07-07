@@ -70,6 +70,15 @@ class Course extends Db {
         return;
     }
 
+    public function delete() {
+        $data = [
+            'id' => $this->id(),
+        ];
+
+        Db::dbDelete(self::TABLE_NAME, $data);
+        return;
+    }
+
     public static function findAll() {
         $data = Db::dbFind(self::TABLE_NAME);
 
