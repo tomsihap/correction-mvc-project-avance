@@ -34,7 +34,10 @@ class RegistrationsController {
 
     // Route: POST registrations/$id/edit
     public function update($id) {
-
+        $registration = Registration::findOne($id);
+        $registration->setStudentId($_POST['student_id']);
+        $registration->setCourseId($_POST['course_id']);
+        $registration->update();
     }
 
     // Route: GET registrations/$id/delete

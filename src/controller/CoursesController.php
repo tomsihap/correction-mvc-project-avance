@@ -29,7 +29,10 @@ class CoursesController {
 
     // Route: POST courses/$id/edit
     public function update($id) {
-
+        $course = Course::findOne($id);
+        $course->setTitle($_POST['title']);
+        $course->setTeacher($_POST['teacher']);
+        $course->update();
     }
 
     // Route: GET courses/$id/delete
