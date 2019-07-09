@@ -1,8 +1,11 @@
 # Correction du TP PHP/POO/MVC Avancé
 
-> Lien vers le TP d'origine : https://gist.github.com/tomsihap/0e10bd34ed1cb8ba1366866849e3da96
 
-> Lien vers le dossier de base : https://github.com/tomsihap/mvc-avance-base
+# IMPORTANT
+
+## TP d'origine :  https://gist.github.com/tomsihap/0e10bd34ed1cb8ba1366866849e3da96
+
+## PROJET DE BASE POUR TRAVAILLER + CODE A RAJOUTER LORS DU DEVELOPPEMENT :  https://github.com/tomsihap/mvc-avance-base
 
 ## Sommaire
 
